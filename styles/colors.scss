@@ -1,0 +1,39 @@
+:root {
+  --steel-blue: #5d708c;
+  --electric-blue: #3b72cc;
+  --navy: #273664;
+  --green: #74a108;
+  --forest-green: #3b6d08;
+  --orange: #d27431;
+  --burnt-orange: #9c512d;
+  --purple: #9274be;
+  --deep-purple: #7149ab;
+  --brass: #b7ac81;
+  --bronze: #a89857;
+  --wood: #916b58;
+  --off-white: #e5e4e1;
+  --silver: #ccc;
+  --grey: #999;
+  --slate: #444;
+  --shadow: #222;
+
+  --shadow-blue: #6e839e;
+  --blue-gray: #7f9ccf;
+  --independence: #434f62;
+  --android-green: #a8c845;
+  --laurel-green: #baab93;
+  --purple-mountain-majesty: #8b75ae;
+  --dark-salmon: #e79170;
+  --liver-chestnut: #a07355;
+  --cultured: #f2f1f1;
+  --raisin-black: #242223;
+
+  --primary: var(--electric-blue);
+  --secondary: var(--brass);
+  --success: var(--green);
+  --danger: var(--orange);
+  --primary-active: var(--navy);
+  --secondary-active: var(--bronze);
+  --success-active: var(--forest-green);
+  --danger-active: var(--burnt-orange);
+}
