@@ -28,7 +28,7 @@ export default function Home() {
       <TypographicStyles />
       <Head>
         <title>TidBytes | Taylor Ham</title>
-        <meta name="description" content="Taylor Ham's Tech Tips" />
+        <meta name="description" content="Taylor Ham's Tech Tidbits" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
@@ -45,8 +45,8 @@ export default function Home() {
             <About>
               <h2>The Developer</h2>
               <p>
-                Yo. I'm Taylor Ham, and I like reinventing wheels to find out
-                how and why they work.
+                {`Yo. I'm Taylor Ham, and I like reinventing wheels to find out
+                  how and why they work.`}
               </p>
             </About>
           </DiagonalBackground>
@@ -60,7 +60,7 @@ export default function Home() {
           >
             <Projects>
               <h2>The Code</h2>
-              <p>I like to build stuff that helps people build stuff.</p>
+              <p>{`I like to build stuff that helps people build stuff.`}</p>
             </Projects>
           </DiagonalBackground>
           <DiagonalBackground
@@ -74,8 +74,8 @@ export default function Home() {
             <BlogPosts>
               <h2>The Words</h2>
               <p>
-                Hopefully you can learn from my mistakes. Warning: may contain
-                strong opinions.
+                {`Hopefully you can learn from my mistakes. Warning: may contain
+                  strong opinions.`}
               </p>
             </BlogPosts>
           </DiagonalBackground>

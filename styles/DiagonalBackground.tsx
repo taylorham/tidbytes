@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Children } from "react";
+import { Children, isValidElement, ReactChild } from "react";
 import type { ReactNode } from "react";
 
 function calculateMagicNumber(angle = -8) {
@@ -50,21 +50,29 @@ export function LayerDiagonalsWithShadow({
 }) {
   const wrappedAndReversedChildren = Children.toArray(children)
     .map((child, index, childrenArray) => {
-      const { angle = -8 } = childrenArray[index - 1]?.props ?? child.props;
-      const magicNumber = calculateMagicNumber(angle);
-      const Child = child?.type;
+      if (isValidElement(child)) {
+        const prevElement = childrenArray[index - 1];
+        const angle = isValidElement(prevElement)
+          ? prevElement.props
+          : child.props;
 
-      return (
-        <DropShadow key={index}>
-          <Child
-            {...child.props}
-            style={{
-              ...child.props?.style,
-              paddingTop: `calc(100vw * ${magicNumber})`,
-            }}
-          />
-        </DropShadow>
-      );
+        const magicNumber = calculateMagicNumber(angle);
+        const Child = child?.type;
+
+        return (
+          <DropShadow key={index}>
+            <Child
+              {...child.props}
+              style={{
+                ...child.props?.style,
+                paddingTop: `calc(100vw * ${magicNumber})`,
+              }}
+            />
+          </DropShadow>
+        );
+      }
+
+      return child;
     })
     .reverse();
 
