@@ -52,7 +52,7 @@ export function LayerDiagonalsWithShadow({
     .map((child, index, childrenArray) => {
       if (isValidElement(child)) {
         const prevElement = childrenArray[index - 1];
-        const angle = isValidElement(prevElement)
+        const { angle = -8 } = isValidElement(prevElement)
           ? prevElement.props
           : child.props;
 
