@@ -43,7 +43,7 @@ export function Header() {
             <Y>y</Y>
             tes
           </h1>
-          <small>{`Taylor Ham's Tech Tidbits`}</small>
+          <small>Taylor Ham's Tech Tidbits</small>
         </StyledHeader>
       </DiagonalBackground>
     </DropShadow>

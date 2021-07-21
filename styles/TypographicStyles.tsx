@@ -7,8 +7,18 @@ const fonts = [
   { family: "Merriweather", weight: [300, 400], italic: [300, 400] },
 ];
 
-const fontSize = 1.5;
+const fontSize = 1.4;
 const fontScale = 1.33;
+
+function calculateSize(factor = 1) {
+  let roundedSize;
+  if (Math.sign(factor) > 0) {
+    roundedSize = (fontSize * fontScale ** factor).toFixed(1);
+  } else {
+    roundedSize = (fontSize / fontScale ** (factor * -1)).toFixed(1);
+  }
+  return `${roundedSize}rem`;
+}
 
 export const TypographicStyles = createGlobalStyle`
   :root {
@@ -16,12 +26,12 @@ export const TypographicStyles = createGlobalStyle`
     --body-font: "Merriweather";
     --body-font-size: ${fontSize}rem;
     --font-scale: ${fontScale};
-    --h1-font-size: ${(fontSize * fontScale ** 4).toFixed(1)}rem;
-    --h2-font-size: ${(fontSize * fontScale ** 3).toFixed(1)}rem;
-    --h3-font-size: ${(fontSize * fontScale ** 2).toFixed(1)}rem;
-    --h4-font-size: ${(fontSize * fontScale).toFixed(1)}rem;
-    --caption-font-size: ${(fontSize / fontScale).toFixed(1)}rem;
-    --tiny-font-size: ${(fontSize / fontScale ** 2).toFixed(1)}rem;
+    --h1-font-size: ${calculateSize(4)};
+    --h2-font-size: ${calculateSize(3)};
+    --h3-font-size: ${calculateSize(2)};
+    --h4-font-size: ${calculateSize()};
+    --caption-font-size: ${calculateSize(-1)};
+    --tiny-font-size: ${calculateSize(-2)};
   }
 
   html {
